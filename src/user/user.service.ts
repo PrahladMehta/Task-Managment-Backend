@@ -97,8 +97,9 @@ export class UserService {
 
              if(user){
                   return {success:false,message:"User exist please login"};
-             }    
-
+             }  
+             
+             await this.otpModel.findOneAndDelete({email});
             
 
              const otp=Math.floor(Math.random()*1000000);
