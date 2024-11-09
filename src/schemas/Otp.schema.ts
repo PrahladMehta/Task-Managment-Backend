@@ -11,6 +11,9 @@ export class Otp{
       @Prop({required:true})
       otp:string
 
+      @Prop({ default: Date.now, expires: 180 }) 
+      createdAt: Date;
+
 
 
 }
